@@ -110,11 +110,44 @@ console.log(
 console.log('EXTRA Exercise:', eExercise++)
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const loopUntil = function (x) {
+  if (x < 0 || x > 9) {
+    console.log('Il numero deve essere tra 0 e 9')
+    return
+  }
+  let count = 0
+  while (count < 3) {
+    let randomNum = Math.floor(Math.random() * 10)
+    console.log(randomNum)
+    if (randomNum > x) {
+      count++
+    } else {
+      count = 0
+    }
+  }
+}
+loopUntil(5)
+
 /* EXTRA 7
 Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
 */
 console.log('EXTRA Exercise:', eExercise++)
 /* SCRIVI QUI LA TUA RISPOSTA */
+const average = function (array) {
+  let sum = 0
+  let count = 0
+  for (let i = 0; i < array.length; i++) {
+    if (typeof array[i] === 'number') {
+      sum += array[i]
+      count++
+    }
+  }
+  return count === 0 ? 0 : sum / count
+}
+
+let mixedArray = [1, 2, 'a', 3, 4, 'b', 5]
+console.log("l'array misto è :", mixedArray)
+console.log('La media aritmetica è: ', average(mixedArray))
 
 /* EXTRA 8
  Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
